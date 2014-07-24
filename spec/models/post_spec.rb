@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe "static_pages/updates.html.erb", :type => :view do
+RSpec.describe Post, :type => :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end

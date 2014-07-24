@@ -1,0 +1,108 @@
+<div class="row" id="home">
+  <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+    <div class="jumbotron">
+      <h1><%= @course.name %>   </h1>
+      <h2><%= @course.description %> </h2>
+      <p>Teachers: <%= @course.teachers %></p>
+      <p>Average GPA from last semester: <%= number_with_precision(@course.gpa, precision: 2) %></p>
+      <p>Grade Distribution from Spring 2014:</p>
+      <%= pie_chart(@course.grade_distribution, height: "300px") %>
+    </div>
+  </div>
+  <div class="hidden-xs hidden-sm col-md-3  col-lg-3">
+    <div class="fixed">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="alert-info"><a href="#home">Info</a></li>
+        <li class="alert-info"><a href="#links">Links</a></li>
+        <li class="alert-info"><a href="#comments">Comments</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<% if @course.links.length >= 1 %>
+<%= @course.links.in_groups_of(3, false) do |group| %>
+  <div class="row" id="links">
+
+    <% group.each do |link| %>
+      <div class="link link-tool-tip col-xs-12 col-sm-6 col-lg-3"
+          data-toggle="tooltip" data-placement="top" title="<%=link.url%>">
+          <a href="<%= link.url %>" class="list-group-item">
+            <h2 class="list-group-item-heading"><%= link.name %></h2>
+            <p class="list-group-item-text lead"><%= link.description %></p>
+          </a>
+        </div>
+    <% end %>
+  </div>
+<% end %>
+<% else %>
+  <div class="row no-links" id="links">
+    <div class="text-danger col-xs-12 col-sm-9 col-lg-9">
+      <h1>No Links yet.  Come back later or share your own</h1>
+    </div>
+  </div>
+<% end %>
+
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-9 col-lg-9" id="links">
+    <h1>Post a helpful link<small> share a good study resource or note</small></h1>
+
+    <%= form_for(@link, url: { action: "create" }, class: 'form-group') do |f| %>
+
+    <%= f.text_field :url ,class:"form-control input-lg form-group", placeholder: "Url" %>
+
+    <%= f.text_field :name, class:"form-control input-lg form-group", placeholder: "Name"  %>
+
+    <%= f.text_field :description, class:"form-control input-lg form-group", placeholder: "Description" %>
+
+    <%= f.hidden_field :course_id, value: @course.id %>
+
+    <div class="form-group">
+    <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+
+<% @course.posts.each do |post| %>
+<div class="row wrap">
+  <div class="col-sm-9 col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%=post.title  %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="alert">
+          <h4><%= post.description %></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%end %>
+
+
+
+<div class="row">
+
+  <div class="col-xs-12 col-sm-9 col-lg-9" id="comments">
+    <h1>Post a comment<small> any advice or tips?</small></h1>
+
+    <%= form_for(@post, class: 'form-group') do |f| %>
+
+      <%= f.text_field :title , class:"form-control input-lg form-group", placeholder: "Title" %>
+
+      <%= f.text_area :description, class:"form-control input-lg form-group",rows: 5, placeholder: "Description"  %>
+
+      <%= f.hidden_field :course_id, value: @course.id %>
+
+      <div class="form-group">
+        <%= f.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
