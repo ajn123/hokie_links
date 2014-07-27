@@ -23,7 +23,7 @@ RSpec.describe "courses/show.html.erb", :type => :view do
     before { click_link 'CS 5114' }
 
     it "should go to class" do
-      expect(page).to have_content('last semester: 2.34') # WTF???
+      expect(page).to have_content('last semester: 2.34')
       expect(page).to_not have_content('GPA: 2.342')
 
     end
@@ -31,6 +31,8 @@ RSpec.describe "courses/show.html.erb", :type => :view do
      it "should increase link count" do
        fill_in 'Url',         with: "http://hokielinks.herokuapp.com/courses/edit?id=42"
        fill_in "Name",        with: "Hokie Linker"
+       find('#links').fill_in 'Description',    with: "world"
+
 
        expect{click_button "Submit link"}.to change(@course.links, :count).by(1)
      end
@@ -38,8 +40,15 @@ RSpec.describe "courses/show.html.erb", :type => :view do
      it "should not increase link count" do
        fill_in 'Url',         with: "http://hokielinks.herokuapp.com/courses/edit?id=42"
        expect{click_button "Submit link"}.not_to change(@course.links, :count)
-
      end
+
+    it "should increase comments count" do
+      fill_in 'Title',         with: "hello"
+      find('#comments').fill_in 'Description',    with: "world"
+      expect{click_button "Submit comment"}.to change(@course.posts, :count).by(1)
+    end
+
+    #TODO failing comment test.
   end
 
 
