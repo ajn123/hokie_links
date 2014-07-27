@@ -6,7 +6,7 @@ RSpec.describe "static_pages/index.html.erb", :type => :view do
 
   describe "Home page" do
     before { visit root_path }
-    it { should have_content('Main Content') }
+    it { should have_content('Select a class') }
 
     it "should have the correct links" do
       click_link "About"

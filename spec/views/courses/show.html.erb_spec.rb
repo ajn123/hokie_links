@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "courses/show.html.erb", :type => :view do
 
   before do
-    @course = Course.create(name: 'CS 5114', description: "mastered to data structures and algorithms", gpa: 2.345)
+    @course = Course.create(name: 'CS 5114', description: "mastered to data structures and algorithms", gpa: 2.342)
   end
 
   subject { page }
@@ -22,8 +22,8 @@ RSpec.describe "courses/show.html.erb", :type => :view do
   describe "can go to class" do
     it "should go to class" do
       click_link 'CS 5114'
-      expect(page).to have_content('GPA: 2.34') # WTF???
-      expect(page).to_not have_content('GPA: 2.345')
+      expect(page).to have_content('last semester: 2.34') # WTF???
+      expect(page).to_not have_content('GPA: 2.342')
 
     end
   end
