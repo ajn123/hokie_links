@@ -2,7 +2,7 @@ class Link < ActiveRecord::Base
   belongs_to :course
 
   validates :url, :format => URI::regexp(%w(http https)), uniqueness: true
-  validates :description, presence: true
+  validates :name, presence: true
 
 
 end
