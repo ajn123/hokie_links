@@ -4,11 +4,10 @@ class PostsController < ApplicationController
     if post.save
       flash[:success] = "Thanks for contributing"
     else
-      flash[:danger] = "Incorrect comment"
+      flash[:danger] = post.errors.messages
     end
     redirect_to :back
   end
-
 
   private
 

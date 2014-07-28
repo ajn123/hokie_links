@@ -128,19 +128,19 @@ $endColor : rgba(31, 226, 220, 0.38);
 
 }
 
-$cyan : #444144;
+$gray: #adaaad;
 
 .nav-tabs {
 
   margin-bottom: 0;
   border-radius: 7px;
-  border-color: $cyan;
+  border-color: $gray;
   li {
     border-radius: 7px;
     border-width: thin;
     margin-left: 25px;
-    border-top: solid $cyan;
-    border-right: solid $cyan;
-    border-left: solid $cyan;
+    border-top: solid $gray;
+    border-right: solid $gray;
+    border-left: solid $gray;
   }
 }

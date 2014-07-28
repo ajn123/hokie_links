@@ -14,10 +14,9 @@ class CoursesController < ApplicationController
     if link.save
       flash[:success] = "Thanks for contributing!"
     else
-      flash[:danger] = "Your Link was not valid, must start with http"
+      flash[:danger] = link.errors.messages
     end
     redirect_to :back # Go back to page regardless
-
   end
 
   def create_post
