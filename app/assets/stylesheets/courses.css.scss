@@ -121,3 +121,26 @@ $endColor : rgba(31, 226, 220, 0.38);
 .no-links{
   padding-bottom: 100px;
 }
+
+
+.tab-content {
+  padding: 10px;
+
+}
+
+$cyan : #444144;
+
+.nav-tabs {
+
+  margin-bottom: 0;
+  border-radius: 7px;
+  border-color: $cyan;
+  li {
+    border-radius: 7px;
+    border-width: thin;
+    margin-left: 25px;
+    border-top: solid $cyan;
+    border-right: solid $cyan;
+    border-left: solid $cyan;
+  }
+}
