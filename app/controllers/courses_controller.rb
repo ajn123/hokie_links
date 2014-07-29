@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  def show
+  def index
     @courses = Course.all
   end
 

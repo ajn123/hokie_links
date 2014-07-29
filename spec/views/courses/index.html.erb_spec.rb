@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "courses/show.html.erb", :type => :view do
+RSpec.describe "courses/index.html.erb", :type => :view do
 
   before do
-    @course = Course.create(id: 0,
+    @course = Course.create(id: 1,
                             name: 'CS 5114',
                             description: "mastered to data structures and algorithms",
                             gpa: 2.342)
@@ -11,7 +11,8 @@ RSpec.describe "courses/show.html.erb", :type => :view do
 
   subject { page }
 
-  before { visit courses_path}
+
+  before { visit courses_path }
 
   describe "have main content" do
     it { is_expected.to have_content("Select a class") }
@@ -20,6 +21,11 @@ RSpec.describe "courses/show.html.erb", :type => :view do
   describe "display a class" do
     it { is_expected.to have_content("CS 5114") }
 
+  end
+
+  describe "click detail" do
+    before { click_link 'Details' }
+    it { should have_content('mastered to data structures and algorithms') }
   end
 
   describe "can go to class" do
