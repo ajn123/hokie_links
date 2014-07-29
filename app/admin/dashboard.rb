@@ -10,7 +10,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recent Posts" do
           ul do
-           Post.all.map do |post|
+           Post.order('created_at DESC').each do |post|
               li do
                 para "#{post.title}: #{post.description}"
               end
@@ -20,9 +20,9 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Recent Posts" do
+        panel "Recent Links" do
           ul do
-            Link.all.map do |link|
+            Link.order('created_at DESC').each do |link|
               li do
                 para "#{link.name}: #{link.description}"
               end
