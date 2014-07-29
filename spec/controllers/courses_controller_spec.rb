@@ -8,5 +8,4 @@ RSpec.describe CoursesController, :type => :controller do
       expect(response).to be_success
     end
   end
-
 end

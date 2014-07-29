@@ -10,6 +10,7 @@
 
 Course.delete_all  # prime database
 Link.delete_all # delete links
+Post.delete_all
 
 
 Course.create(name: 'CS 1044', description: 'Intro Prog in C' ,teachers: 'Stevens', gpa:2.47, As: 20.15, Bs: 35.8, Cs: 23.1, Ds: 12.1, Fs: 8.85)
