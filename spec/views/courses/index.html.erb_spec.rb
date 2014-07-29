@@ -11,7 +11,6 @@ RSpec.describe "courses/index.html.erb", :type => :view do
 
   subject { page }
 
-
   before { visit courses_path }
 
   describe "have main content" do
@@ -43,7 +42,7 @@ RSpec.describe "courses/index.html.erb", :type => :view do
        expect{ click_button "Submit link" }.to change(@course.links, :count).by(1)
      end
 
-     it "should not increase link count" do
+     it "link should fail" do
        fill_in 'Url',         with: "http://hokielinks.herokuapp.com/courses/edit?id=42"
        expect{ click_button "Submit link" }.not_to change(@course.links, :count)
      end
@@ -51,7 +50,7 @@ RSpec.describe "courses/index.html.erb", :type => :view do
     it "should increase comments count" do
       fill_in 'Title',         with: "hello"
       find('#comments').fill_in 'Description',    with: "world"
-      expect{ click_button "Submit comment" }.to change(@course.posts, :count).by(1)
+      expect { click_button "Submit comment" }.to change(@course.posts, :count).by(1)
     end
 
     it "comment should fail" do
@@ -59,8 +58,5 @@ RSpec.describe "courses/index.html.erb", :type => :view do
       find('#comments').fill_in 'Description',    with: ""
       expect { click_button "Submit comment" }.not_to change(@course.posts, :count)
     end
-
   end
-
-
 end
