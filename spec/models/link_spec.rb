@@ -3,13 +3,14 @@ require 'rails_helper'
 RSpec.describe Link, :type => :model do
 
   before do
-    @link = Link.new(url: "http://www.railstutorial.org/book/modeling_users", description: "hi howard")
+    @link = Link.new(url: "http://www.railstutorial.org/book/modeling_users",name: "rails tut", description: "hi howard")
   end
 
   subject{ @link }
 
   it { should respond_to(:url)}
   it { should respond_to(:description)}
+  it { should respond_to(:name)}
 
   it { should be_valid}
 

@@ -1,3 +1,25 @@
+  <% if @course.links.length >= 1 %>
+    <%= @course.links.in_groups_of(3, false) do |group| %>
+      <div class="row" id="links">
+        <% group.each do |link| %>
+          <div class="link link-tool-tip col-xs-12 col-sm-6 col-lg-3"
+               data-toggle="tooltip" data-placement="top" title="<%=link.url%>">
+            <a href="<%= link.url %>" class="list-group-item">
+              <h2 class="list-group-item-heading"><%= link.name %></h2>
+              <p class="list-group-item-text lead"><%= link.description %></p>
+            </a>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="row no-links">
+      <div class="text-danger col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h1>No Links yet.  Come back later or share your own</h1>
+      </div>
+    </div>
+  <% end %>
+
 <div class="row">
   <div class="col-xs-12 col-sm-9 col-lg-9" id="links">
     <h1>Post a helpful link<small> share a good study resource or note</small></h1>

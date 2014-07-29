@@ -32,56 +32,9 @@
 </ul>
 <div class="tab-content">
   <div id="Links" class="tab-pane fade in active">
-
-    <% if @course.links.length >= 1 %>
-      <%= @course.links.in_groups_of(3, false) do |group| %>
-        <div class="row" id="links">
-          <% group.each do |link| %>
-            <div class="link link-tool-tip col-xs-12 col-sm-6 col-lg-3"
-                 data-toggle="tooltip" data-placement="top" title="<%=link.url%>">
-              <a href="<%= link.url %>" class="list-group-item">
-                <h2 class="list-group-item-heading"><%= link.name %></h2>
-                <p class="list-group-item-text lead"><%= link.description %></p>
-              </a>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    <% else %>
-      <div class="row no-links">
-        <div class="text-danger <%= columns %>">
-          <h1>No Links yet.  Come back later or share your own</h1>
-        </div>
-      </div>
-    <% end %>
-      <%= render 'courses/link_form' %>
+    <%= render 'courses/link_form' %>
   </div>
   <div id="Comments" class="tab-pane fade">
-
-    <% if @course.posts.length >= 1 %>
-    <% @course.posts.each do |post| %>
-      <div class="row wrap">
-        <div class="col-sm-9 col-md-9">
-          <div class="panel panel-default <%= cycle('panel-info', 'panel-success') %>">
-            <div class="panel-heading ">
-              <h3 class="panel-title "><%=post.title  %></h3>
-            </div>
-            <div class="panel-body">
-              <div class="alert">
-                <h4><%= post.description %></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-    <% else %>
-    <div class="row no-links">
-      <div class="text-danger <%= columns %>">
-        <h1> No Comments yet. Come back later or share your own.</h1>
-      </div>
-    </div>
-    <% end %>
-      <%= render 'courses/comment_form' %>
+    <%= render 'courses/comment_form' %>
   </div>
 </div>
