@@ -50,7 +50,6 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 # gem 'debugger', group: [:development, :test]
 
 
-
 # Solely for testing purposes
 group :development do
   gem 'better_errors'
