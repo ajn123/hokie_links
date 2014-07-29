@@ -4,8 +4,6 @@ ActiveAdmin.register_page "Dashboard" do
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
 
-    # Here is an example of a simple dashboard with columns and panels.
-    #
     columns do
       column do
         panel "Recent Posts" do
@@ -24,6 +22,9 @@ ActiveAdmin.register_page "Dashboard" do
           ul do
             Link.order('created_at DESC').each do |link|
               li do
+                a href: link.url do
+                  link.url[0..30]
+                end
                 para "#{link.name}: #{link.description}"
               end
             end
