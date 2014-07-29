@@ -5,7 +5,8 @@
           <div class="link link-tool-tip col-xs-12 col-sm-6 col-lg-3"
                data-toggle="tooltip" data-placement="top" title="<%=link.url%>">
             <a href="<%= link.url %>" class="list-group-item">
-              <h2 class="list-group-item-heading"><%= link.name %></h2>
+              <i class="fa fa-external-link-square pull-right"></i>
+              <p class="list-group-item-heading" id="head"><%= link.name %></p>
               <p class="list-group-item-text lead"><%= link.description %></p>
             </a>
           </div>

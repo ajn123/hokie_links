@@ -44,7 +44,7 @@ a > .box > .icon > .image {
   color: white !important;
 }
 
- .box > .icon > .info {
+.box > .icon > .info {
   margin-top: -24px;
   background: rgba(0, 0, 0, 0.04);
   border: 1px solid #e0e0e0;
@@ -66,14 +66,14 @@ a > .box > .icon > .image {
   color: #222;
 }
 
- .box > .icon > .info > .more a {
+.box > .icon > .info > .more a {
   color: #222;
   line-height: 12px;
   text-transform: uppercase;
   text-decoration: none;
 }
 
- .box > .icon:hover > .info > .more > a {
+.box > .icon:hover > .info > .more > a {
   color: #000;
   padding: 6px 8px;
   border-bottom: 4px solid black;
@@ -144,3 +144,12 @@ $gray: #adaaad;
     border-left: solid $gray;
   }
 }
+
+
+#head{
+  font-size: 23px;
+
+}
+
+
+
