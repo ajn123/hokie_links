@@ -131,7 +131,6 @@ $endColor : rgba(31, 226, 220, 0.38);
 $gray: #adaaad;
 
 .nav-tabs {
-
   margin-bottom: 0;
   border-radius: 7px;
   border-color: $gray;
@@ -145,10 +144,9 @@ $gray: #adaaad;
   }
 }
 
-
 #head{
   font-size: 23px;
-
+  text-wrap: unrestricted;
 }
 
 

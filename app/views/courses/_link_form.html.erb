@@ -2,11 +2,11 @@
     <%= @course.links.in_groups_of(3, false) do |group| %>
       <div class="row" id="links">
         <% group.each do |link| %>
-          <div class="link link-tool-tip col-xs-12 col-sm-6 col-lg-3"
+          <div class="link link-tool-tip col-xs-12 col-sm-6 col-lg-4"
                data-toggle="tooltip" data-placement="top" title="<%=link.url%>">
-            <a href="<%= link.url %>" class="list-group-item">
+            <a href="<%= link.url %>" class="list-group-item"  id="head">
               <i class="fa fa-external-link-square pull-right"></i>
-              <p class="list-group-item-heading" id="head"><%= link.name %></p>
+              <p class="list-group-item-heading"><%= link.name %></p>
               <p class="list-group-item-text lead"><%= link.description %></p>
             </a>
           </div>
