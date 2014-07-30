@@ -1,0 +1,10 @@
+
+<%= form_for(@note) do |f| %>
+  <%= f.text_field :title %>
+  <br >
+  <%= f.text_area :description, class:"form-control input-lg form-group", rows: 5, placeholder: "Description" %>
+
+  <%= markdown(@note.description) %>
+
+  <%= f.submit %>
+<% end %>

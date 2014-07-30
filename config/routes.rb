@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :courses, :posts, :links
+
+  resources :courses, :posts, :links, :notes
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

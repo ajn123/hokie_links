@@ -1,0 +1,11 @@
+
+<%= form_for(@note) do |f| %>
+  <%= f.text_field :title, class:"form-control input-lg_form-group", placeholder: "Title" %>
+
+  <%= f.text_area :description, class:"form-control input-lg form-group", rows: 5, placeholder: "Description" %>
+
+  <%= f.hidden_field :course_id, value: params[:course_id] %>
+  <div class="form-group">
+    <%= f.submit "Submit comment", class: "btn btn-primary btn-lg btn-block" %>
+  </div>
+<% end %>
