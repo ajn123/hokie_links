@@ -4,7 +4,7 @@
   </a>
 </div>
 <% if @course.notes.length >= 1 %>
-  <%= @course.notes.in_groups_of(3, false) do |group| %>
+  <%= @course.notes.order('created_at ASC').in_groups_of(3, false) do |group| %>
     <div class="row" id="links">
       <% group.each do |note| %>
         <div class="link link-tool-tip col-xs-12 col-sm-6 col-lg-4">
