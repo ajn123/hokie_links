@@ -47,16 +47,41 @@ RSpec.describe "courses/index.html.erb", :type => :view do
        expect{ click_button "Submit link" }.not_to change(@course.links, :count)
      end
 
+    def submit_comment
+      click_button "Submit comment"
+    end
+
     it "should increase comments count" do
       fill_in 'Title',         with: "hello"
       find('#comments').fill_in 'Description',    with: "world"
-      expect { click_button "Submit comment" }.to change(@course.posts, :count).by(1)
+      expect { submit_comment }.to change(@course.posts, :count).by(1)
     end
 
     it "comment should fail" do
       fill_in 'Title',  with: 'This is a title'
       find('#comments').fill_in 'Description',    with: ""
-      expect { click_button "Submit comment" }.not_to change(@course.posts, :count)
+      expect { submit_comment }.not_to change(@course.posts, :count)
     end
+
+    describe "note adding" do
+      before { click_link 'New Note' }
+
+      def save_note
+        click_button "Save Note"
+      end
+
+      it "note should be added" do
+        fill_in 'Title',  with: 'This is a title'
+        fill_in 'Markdown',    with: "#Hello"
+        expect { save_note }.to change(@course.notes, :count)
+      end
+
+      it "note should be faild" do
+        fill_in 'Title',  with: 'This is a title'
+        fill_in 'Markdown',    with: ""
+        expect { save_note }.not_to change(@course.notes, :count)
+      end
+    end
+
   end
 end

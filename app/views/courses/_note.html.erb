@@ -1,0 +1,28 @@
+<div class="ol-xs-12 col-sm-6 col-lg-4 center-block">
+  <a href="<%= new_note_path(course_id: @course.id) %>" class="btn btn-primary btn-lg note-new">
+    <i class="fa fa-paperclip fa-5x"></i> New Note <br> <br>
+  </a>
+</div>
+<% if @course.notes.length >= 1 %>
+  <%= @course.notes.in_groups_of(3, false) do |group| %>
+    <div class="row" id="links">
+      <% group.each do |note| %>
+        <div class="link link-tool-tip col-xs-12 col-sm-6 col-lg-4">
+          <a href="<%= note_path(note)%>" class="list-group-item">
+            <i class="fa fa-external-link-square pull-right"></i>
+            <p class="list-group-item-heading" id="head"><%= note.title %></p>
+            <p class="list-group-item-text lead"><%= truncate(note.description, length: 100) %></p>
+            <%= link_to 'View', note_path(note),class: "btn btn-primary btn-lg "%>
+            <%= link_to 'Edit', edit_note_path(note),class: "btn btn-primary btn-lg " %>
+          </a>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="row no-links">
+    <div class="text-danger col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h1>No Links yet. Come back later or share your own</h1>
+    </div>
+  </div>
+<% end %>

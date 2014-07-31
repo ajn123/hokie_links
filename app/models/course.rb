@@ -1,6 +1,7 @@
 class Course < ActiveRecord::Base
   has_many :links
   has_many :posts
+  has_many :notes
   validates :name, :description, presence: true
 
   def grade_distribution

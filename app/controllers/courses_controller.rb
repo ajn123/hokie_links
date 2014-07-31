@@ -9,6 +9,10 @@ class CoursesController < ApplicationController
     @post = Post.new()
   end
 
+  def show
+    redirect_to :edit
+  end
+
   private
 
 end

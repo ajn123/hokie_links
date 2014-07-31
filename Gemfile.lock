@@ -193,6 +193,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.1)
       json (~> 1.4)
+    redcarpet (2.1.1)
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rspec (3.0.0)
@@ -266,6 +267,7 @@ DEPENDENCIES
   bootstrap-sass
   capybara
   chartkick
+  coderay (~> 1.1.0)
   coffee-rails (~> 4.0.0)
   devise
   factory_girl_rails (= 4.2.0)
@@ -277,6 +279,7 @@ DEPENDENCIES
   pg (= 0.15.1)
   rails (= 4.1.4)
   rails_12factor (= 0.0.2)
+  redcarpet (~> 2.1.1)
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

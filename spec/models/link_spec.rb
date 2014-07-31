@@ -17,7 +17,6 @@ RSpec.describe Link, :type => :model do
   describe "invalid url" do
     before { @link.url = " " }
     it { should_not be_valid }
-
   end
 
   describe "valid url" do
@@ -27,8 +26,6 @@ RSpec.describe Link, :type => :model do
 
   describe "invalid description" do
     before { @link.description = "" }
-
-
     it { should_not be_valid }
   end
 

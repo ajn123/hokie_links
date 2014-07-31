@@ -1,0 +1,17 @@
+
+<ol class="breadcrumb">
+  <li><%= link_to 'Markdown Cheatsheet', 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet',class: "btn btn-primary btn-lg ", target: :blank%></li>
+</ol>
+
+<%= form_for(@note) do |f| %>
+
+  <ol class="breadcrumb">
+    <%= f.text_field :title, class:"form-control input-lg_form-group", placeholder: "Title" %>
+  </ol>
+  <%= f.text_area :description, class:"form-control input-lg form-group", rows: 20, placeholder: "Markdown" %>
+
+  <%= f.hidden_field :course_id, value: params[:course_id] %>
+  <div class="form-group">
+    <%= f.submit "Save Note", class: "btn btn-primary btn-lg btn-block" %>
+  </div>
+<% end %>

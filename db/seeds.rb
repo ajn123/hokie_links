@@ -11,6 +11,7 @@
 Course.delete_all  # prime database
 Link.delete_all # delete links
 Post.delete_all
+Note.delete_all
 
 
 Course.create(name: 'CS 1044', description: 'Intro Prog in C' ,teachers: 'Stevens', gpa:2.47, As: 20.15, Bs: 35.8, Cs: 23.1, Ds: 12.1, Fs: 8.85)
@@ -55,3 +56,8 @@ Course.create(name: 'CS 6204', description: 'TS:Adv Top Sys & Net Security' ,tea
 Course.create(name: 'CS 6604', description: 'TS:Digital Libraries' ,teachers: 'Fox', gpa:3.58, As: 52.9, Bs: 47.1, Cs: 0.0, Ds: 0.0, Fs: 0.0)
 Course.create(name: 'CS 6824', description: 'TS:Hypergraph Algos & Apps' ,teachers: 'Murali', gpa:3.68, As: 80.0, Bs: 20.0, Cs: 0.0, Ds: 0.0, Fs: 0.0)
 
+
+
+Course.all.each do |course| # Welcome note
+  Note.create(course_id: course.id, title: "Welcome to #{course.name}", description: "#Welcome \n You can use  __markdown language__ to make notes and share with classmates\n\n1. You can also create links.  Click [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to see a markdown cheet sheet \n2. You can make awesome code samples like this:\n\n```python\ns = 'Python syntax highlighting'\nprint s\n```\n You can also make awesome tables:\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |")
+end
