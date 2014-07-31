@@ -1,10 +1,26 @@
 
-<%= form_for(@note) do |f| %>
-  <%= f.text_field :title %>
-  <br >
-  <%= f.text_area :description, class:"form-control input-lg form-group", rows: 5, placeholder: "Description" %>
 
-  <%= markdown(@note.description) %>
 
-  <%= f.submit %>
+<%= form_for(@note, url: { action: 'show' }) do |f| %>
+
+  <ol class="breadcrumb">
+    <li><%= link_to 'View', note_path(@note),class: "btn btn-primary btn-lg ", data: { confirm: "Are you sure?, you will lose all changes made." } %></li>
+    <li><%= f.submit class: "btn btn-primary btn-lg "  %> </li>
+    <li><%= link_to 'Back to Course', edit_course_path(@note.course_id),class: "btn btn-primary btn-lg " %></li>
+    <li><%= link_to 'Markdown Cheatsheet', 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet',class: "btn btn-primary btn-lg ", :target => "_blank" %></li>
+  </ol>
+
+  <ol class="breadcrumb">
+    <%= f.label 'Title:' %>
+    <%= f.text_field :title %>
+  </ol> <br>
+
+  <%= f.text_area :description, class:"form-control input-lg form-group", rows: 30, placeholder: "Description" %>
+
+  <ol class="breadcrumb">
+    <li><%= link_to 'View', note_path(@note),class: "btn btn-primary btn-lg ", data: { confirm: "Are you sure?, you will lose all changes made." } %></li>
+    <li><%= f.submit class: "btn btn-primary btn-lg "  %> </li>
+    <li><%= link_to 'Back to Course', edit_course_path(@note.course_id),class: "btn btn-primary btn-lg " %></li>
+    <li><%= link_to 'Markdown Cheatsheet', 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet',class: "btn btn-primary btn-lg ", :target => "_blank" %></li>
+  </ol>
 <% end %>

@@ -7,8 +7,15 @@ class NotesController < ApplicationController
   def create
     note = Note.new(note_params)
     if note.save
-      redirect_to edit_course_path(note.course_id)
+      redirect_to note_path(note)
+    else
+      flash[:danger] = note.errors.messages
+      redirect_to :back
     end
+  end
+
+  def show
+    @note = Note.find(params[:id])
   end
 
   def new
@@ -20,8 +27,13 @@ class NotesController < ApplicationController
   end
 
   def update
-    Note.find(params[:id]).update_attributes(note_params)
-    redirect_to action: :index
+    note =  Note.find(params[:id])
+    unless note.update_attributes(note_params)
+      flash[:danger] = note.errors.messages
+      redirect_to :back
+    else
+      redirect_to action: :show
+    end
   end
 
 
