@@ -72,7 +72,7 @@ RSpec.describe "courses/index.html.erb", :type => :view do
 
       it "note should be added" do
         fill_in 'Title',  with: 'This is a title'
-        fill_in 'Markdown',    with: "#Hello"
+        fill_in 'Markdown',    with: "```\n```"
         expect { save_note }.to change(@course.notes, :count)
       end
 
