@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Link, :type => :model do
 
   before do
-    @link = Link.new(url: "http://www.railstutorial.org/book/modeling_users",name: "rails tut", description: "hi howard")
+    @link = Link.new(url: "http://www.railstutorial.org",name: "rails tut", description: "hi howard")
   end
 
   subject{ @link }
@@ -15,7 +15,7 @@ RSpec.describe Link, :type => :model do
   it { should be_valid}
 
   describe "invalid url" do
-    before { @link.url = " " }
+    before { @link.url = "http://www.utnaoeoe.com" }
     it { should_not be_valid }
   end
 
