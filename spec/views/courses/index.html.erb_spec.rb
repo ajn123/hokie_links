@@ -19,12 +19,11 @@ RSpec.describe "courses/index.html.erb", :type => :view do
 
   describe "display a class" do
     it { is_expected.to have_content("CS 5114") }
-
   end
 
   describe "click detail" do
     before { click_link 'Details' }
-    it { should have_content('mastered to data structures and algorithms') }
+    it { expect(page).to have_content('mastered to data structures and algorithms') }
   end
 
   describe "can go to class" do

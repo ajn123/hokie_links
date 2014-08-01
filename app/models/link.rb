@@ -1,9 +1,8 @@
 class UrlValidator < ActiveModel::EachValidator
-
   def validate_each(record, attribute, value)
     begin
       require 'net/http'
-      result = Net::HTTP.get(URI.parse(value))
+      Net::HTTP.get(URI.parse(value))
     rescue Exception
       record.errors.add(:specific_url, "invalid url")
     end

@@ -3,14 +3,16 @@ require 'rails_helper'
 RSpec.describe Link, :type => :model do
 
   before do
-    @link = Link.new(url: "http://www.railstutorial.org",name: "rails tut", description: "hi howard")
+    @link = Link.new(url: "http://www.railstutorial.org",
+                     name: "rails tut",
+                     description: "hi howard")
   end
 
   subject{ @link }
 
   it { expect(@link).to respond_to(:url)}
-  it { expect(@link).to  respond_to(:description)}
-  it { expect(@link).to  respond_to(:name)}
+  it { expect(@link).to respond_to(:description)}
+  it { expect(@link).to respond_to(:name)}
 
   it { should be_valid}
 
