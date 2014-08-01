@@ -8,25 +8,27 @@ RSpec.describe Link, :type => :model do
 
   subject{ @link }
 
-  it { should respond_to(:url)}
-  it { should respond_to(:description)}
-  it { should respond_to(:name)}
+  it { expect(@link).to respond_to(:url)}
+  it { expect(@link).to  respond_to(:description)}
+  it { expect(@link).to  respond_to(:name)}
 
   it { should be_valid}
 
   describe "invalid url" do
     before { @link.url = "http://www.utnaoeoe.com" }
-    it { should_not be_valid }
+      it "should not work" do
+        expect(@link).not_to be_valid
+      end
   end
 
   describe "valid url" do
     before { @link.url = 'http://www.railstutorial.org/book/modeling_users'}
-    it { should be_valid }
+      it { expect(@link).to be_valid }
   end
 
   describe "invalid description" do
     before { @link.description = "" }
-    it { should_not be_valid }
+      it { expect(@link).not_to be_valid }
   end
 
 end
