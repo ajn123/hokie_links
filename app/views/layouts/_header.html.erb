@@ -1,17 +1,14 @@
-<div class="navbar navbar-default">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="<%= root_path %>">Hokie Linker</a>
-  </div>
-  <div id="navbar" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="<%= root_path %>">Home Page</a></li>
-      <!--<li><a href="#">Contacts</a></li>-->
-      <!--<li><a href="#">About</a></li>-->
+
+<div class="container">
+  <div  id='cssmenu'>
+    <ul>
+      <li ><a href='#'><span>Home</span></a></li>
+      <li><a href='#'><span>Products</span></a></li>
+      <li><a href='#'><span>Company</span></a></li>
+      <li class='last'>
+        <%= link_to 'Classes', courses_path %>
+      </li>
     </ul>
+
   </div>
 </div>
