@@ -3,23 +3,14 @@
 <div class="row" id="home">
   <div class="<%= columns %>">
     <div class="jumbotron">
-      <h1><%= @course.name %>   </h1>
-      <h2><%= @course.description %> </h2>
-      <p>Teachers: <%= @course.teachers %></p>
-      <p>Average GPA from last semester: <%= number_with_precision(@course.gpa, precision: 2) %></p>
+      <h1><%= @course_found.name %>   </h1>
+      <h2><%= @course_found.description %> </h2>
+      <p>Teachers: <%= @course_found.teachers %></p>
+      <p>Average GPA from last semester: <%= number_with_precision(@course_found.gpa, precision: 2) %></p>
       <p>Grade Distribution from Spring 2014:</p>
-      <%= pie_chart(@course.grade_distribution, height: '300px') %>
+      <%= pie_chart(@course_found.grade_distribution, height: '300px') %>
     </div>
   </div>
-  <!--<div class="hidden-xs hidden-sm col-md-3  col-lg-3">-->
-    <!--<div class="fixed">-->
-      <!--<ul class="nav nav-pills nav-stacked">-->
-        <!--<li class="alert-info"><a href="#home">Info</a></li>-->
-        <!--<li class="alert-info"><a href="#links">Links</a></li>-->
-        <!--<li class="alert-info"><a href="#comments">Comments</a></li>-->
-      <!--</ul>-->
-    <!--</div>-->
-  <!--</div>-->
 </div>
 
 <ul class="nav nav-tabs">

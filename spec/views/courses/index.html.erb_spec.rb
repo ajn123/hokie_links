@@ -11,6 +11,7 @@ RSpec.describe "courses/index.html.erb", :type => :view do
 
   subject { page }
 
+
   before { visit courses_path }
 
   describe "have main content" do

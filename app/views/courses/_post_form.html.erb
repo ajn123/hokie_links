@@ -1,5 +1,5 @@
-  <% if @course.posts.length >= 1 %>
-    <% @course.posts.order('created_at DESC').each do |post| %>
+  <% if @course_found.posts.length >= 1 %>
+    <% @course_found.posts.order('created_at DESC').each do |post| %>
       <div class="row wrap">
         <div class="col-sm-12 col-md-12">
           <div class="panel panel-default <%= cycle('panel-info', 'panel-success') %>">
@@ -34,7 +34,7 @@
 
         <%= f.text_area :description, class:"form-control input-lg form-group",rows: 5, placeholder: "Description"  %>
 
-        <%= f.hidden_field :course_id, value: @course.id %>
+        <%= f.hidden_field :course_id, value: @course_found.id %>
 
         <div class="form-group">
           <%= f.submit "Submit comment", class: "btn btn-primary btn-lg btn-block" %>

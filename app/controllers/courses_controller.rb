@@ -3,8 +3,9 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end
 
+
   def edit
-    @course = Course.find(params[:id])
+    @course_found = Course.find(params[:id])
     @link = Link.new()
     @post = Post.new()
   end
@@ -14,5 +15,7 @@ class CoursesController < ApplicationController
   end
 
   private
+
+
 
 end

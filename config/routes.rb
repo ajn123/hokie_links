@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
-
   resources :courses, :posts, :links, :notes
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
   root 'courses#index'
+
+  match '/searches/index', to: 'searches#index', via: ['post','get']
 
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'

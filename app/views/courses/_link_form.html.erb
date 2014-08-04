@@ -1,5 +1,5 @@
-  <% if @course.links.length >= 1 %>
-    <%= @course.links.in_groups_of(3, false) do |group| %>
+  <% if @course_found.links.length >= 1 %>
+    <%= @course_found.links.in_groups_of(3, false) do |group| %>
       <div class="row" id="links">
         <% group.each do |link| %>
           <div class="link link-tool-tip col-xs-12 col-sm-6 col-lg-4"
@@ -33,7 +33,7 @@
 
       <%= f.text_field :description, class:"form-control input-lg form-group", placeholder: "Description" %>
 
-      <%= f.hidden_field :course_id, value: @course.id %>
+      <%= f.hidden_field :course_id, value: @course_found.id %>
 
       <div class="form-group">
         <%= f.submit "Submit link", class: "btn btn-primary btn-lg btn-block" %>

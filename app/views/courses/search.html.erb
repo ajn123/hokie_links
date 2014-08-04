@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-lg-12">
+    <div class="jumbotron">
+      <h1> <%= pluralize(@results.count, 'Result') %> found</h1>
+    </div>
+  </div>
+</div>
+
+<!-- Example row of columns -->
+<%= @results.in_groups_of(3, false) do |group| %>
+  <div class="row">
+    <% group.each do |course| %>
+    <div class="col-lg-4">
+      <h3><%= course.name %></h3>
+      <p> <%= course.description %> </p>
+      <p><%= link_to 'View', edit_course_path(course), class: 'btn btn-primary'%></p>
+    </div>
+    <% end %>
+  </div>
+<% end %>

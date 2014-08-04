@@ -54,6 +54,9 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 # gem 'debugger', group: [:development, :test]
 
 
+# Searching functionality
+gem 'ransack'
+
 # Solely for testing purposes
 group :development do
   gem 'better_errors'
@@ -71,6 +74,7 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'annotate'
 end
 
 

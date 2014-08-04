@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: notes
+#
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  description :text
+#  course_id   :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 require 'rails_helper'
 
 RSpec.describe Note, :type => :model do

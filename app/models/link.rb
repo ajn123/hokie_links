@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: links
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  url         :string(255)
+#  description :string(255)
+#  course_id   :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class UrlValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     begin
