@@ -16,6 +16,4 @@ class CoursesController < ApplicationController
 
   private
 
-
-
 end
