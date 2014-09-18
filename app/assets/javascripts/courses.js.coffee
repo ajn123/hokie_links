@@ -2,9 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-ready = ->
-  $('.link-tool-tip').tooltip();
+#ready = ->
+#  $('.link-tool-tip').tooltip();
 
-$ ->
-  ready()
+#$ ->
+#  ready()
 

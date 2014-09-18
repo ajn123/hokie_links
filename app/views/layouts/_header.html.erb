@@ -13,8 +13,8 @@
       <form class="navbar-form navbar-right" role="form">
        </form>
       <%= form_for :course, url: { controller: 'searches', action: 'index' }, html: { class: "navbar-form navbar-right" }, role: "search" do |f| %>
-        <div class="form-group">
-          <%= f.text_field :name, placeholder: 'Search for classes...', class: "form-control", size: '30' %>
+        <div class="form-group" id="custom-templates">
+          <%= f.text_field :name, placeholder: 'Search for classes...', class: "form-control typeahead", size: '30' %>
         </div>
         <%= f.submit "Search", class: "btn btn-primary" %>
     <% end %>

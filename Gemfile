@@ -19,6 +19,8 @@ gem 'font-awesome-rails' # for using font-awesome icons
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'handlebars_assets'
+gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -33,8 +35,7 @@ gem 'acts_as_commentable' # comments
 
 gem 'sprockets'
 
-gem "chartkick"
-
+gem 'chartkick'
 
 gem 'redcarpet', '~> 2.1.1'
 gem 'coderay', '~> 1.1.0'
