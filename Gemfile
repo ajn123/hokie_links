@@ -14,8 +14,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'bootstrap-sass' # for using bootstrap
-
 gem 'font-awesome-rails' # for using font-awesome icons
+gem 'twitter-typeahead-rails', '~>0.10.5' # TypeAhead Gem
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
