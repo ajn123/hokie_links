@@ -40,24 +40,13 @@ gem 'chartkick'
 gem 'redcarpet', '~> 2.1.1'
 gem 'coderay', '~> 1.1.0'
 
+
+gem 'twitter-typeahead-rails'
+
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-
-# Searching functionality
-gem 'ransack'
-
 # Solely for testing purposes
 group :development do
   gem 'better_errors'

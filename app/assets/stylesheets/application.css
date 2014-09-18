@@ -15,4 +15,5 @@
  *= require static_pages
  *= require font-awesome
  *= require jquery-ui
+ *= require typeahead
  */
