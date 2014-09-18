@@ -11,10 +11,11 @@
 // about supported directives.
 //
 
-//= require jquery-2.1.1
-//= require twitter/typeahead
+//= require jquery
+//= require jquery_ujs
 //= require handlebars.runtime
 //= require handlebars
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require twitter/typeahead
 //= require_tree .
