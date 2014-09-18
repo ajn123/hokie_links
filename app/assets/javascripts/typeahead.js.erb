@@ -1,6 +1,4 @@
-
-
-$(document).ready(function() {
+startTypeahead = function() {
 
 // the basics
 // ----------
@@ -53,5 +51,5 @@ $(document).ready(function() {
 
 });
 
-
-
+$(document).ready(startTypeahead)
+$(document).on('page:load', startTypeahead)

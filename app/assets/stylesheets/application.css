@@ -15,23 +15,4 @@
  *= require static_pages
  *= require font-awesome
  *= require jquery-ui
-
  */
-
-#custom-templates .tt-dropdown-menu {
-    max-height: 150px;
-    overflow-y: auto;
-    background: #269abc;
-    width: 100px;
-}
-
-.tt-cursor{
-    background:#f1b218;
-}
-
-#custom-templates .empty-message {
-    padding: 5px 10px;
-    text-align: center;
-    border: 1px solid #006600;
-    background: #269abc;
-}
