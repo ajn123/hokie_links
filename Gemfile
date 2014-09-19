@@ -41,8 +41,6 @@ gem 'redcarpet', '~> 2.1.1'
 gem 'coderay', '~> 1.1.0'
 
 
-gem 'twitter-typeahead-rails'
-
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 # Use ActiveModel has_secure_password

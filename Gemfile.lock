@@ -302,5 +302,5 @@ DEPENDENCIES
   sprockets
   sqlite3
   turbolinks
-  twitter-typeahead-rails
+  twitter-typeahead-rails (~> 0.10.5)
   uglifier (>= 1.3.0)
