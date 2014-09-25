@@ -1,21 +1,21 @@
 class NotesController < ApplicationController
+  before_action :find_note, only: [:show, :edit, :update]
 
   def index
     @notes = Note.all
   end
 
   def create
-    note = Note.new(note_params)
-    if note.save
-      redirect_to note_path(note)
+    @note = Note.new(note_params)
+    if @note.save
+      redirect_to note_path(@note)
     else
-      flash[:danger] = note.errors.messages
+      flash[:danger] = @note.errors.messages
       redirect_to :back
     end
   end
 
   def show
-    @note = Note.find(params[:id])
   end
 
   def new
@@ -23,13 +23,12 @@ class NotesController < ApplicationController
   end
 
   def edit
-    @note = Note.find(params[:id])
+
   end
 
   def update
-    note =  Note.find(params[:id])
-    unless note.update_attributes(note_params)
-      flash[:danger] = note.errors.messages
+    unless @note.update_attributes(note_params)
+      flash[:danger] = @note.errors.messages
       redirect_to :back
     else
       redirect_to action: :show
@@ -38,6 +37,10 @@ class NotesController < ApplicationController
 
 
   private
+
+  def find_note
+    @note = Note.find(params[:id])
+  end
 
   def note_params
     params.require(:note).permit(:title, :description, :course_id)

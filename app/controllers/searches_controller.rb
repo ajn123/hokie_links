@@ -10,4 +10,5 @@ class SearchesController < ApplicationController
       Course.where("name like ?", "%#{params[:course][:name]}%")
     end
   end
+
 end
