@@ -22,10 +22,7 @@ class Course < ActiveRecord::Base
   has_many :notes
   validates :name, :description, presence: true
 
-  # Used to make routing look nicer and not show the id to the user.
-  def to_param
-    name.gsub(/\s+/, "")
-  end
+
 
   def grade_distribution
     { 'A' => self.As, 'B' => self.Bs, 'C' => self.Cs, 'D' => self.Ds, 'F' => self.Fs }

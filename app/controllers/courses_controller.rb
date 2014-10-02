@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
 
 
   def edit
-    @course_found = Course.find_by_name(params[:id])
+    @course_found = Course.find(params[:id])
     @link = Link.new()
     @post = Post.new()
   end
