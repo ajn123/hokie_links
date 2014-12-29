@@ -14,4 +14,14 @@ require 'rails_helper'
 
 RSpec.describe Post, :type => :model do
 
+  before do 
+    @post = Post.create(title: "hello world", description: "one world")
+  end
+
+  subject{ @post }
+
+  it{ respond_to :title }
+  it{ respond_to :description }
+  it{ be_valid}
+
 end
