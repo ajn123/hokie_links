@@ -23,7 +23,6 @@ class NotesController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -34,7 +33,6 @@ class NotesController < ApplicationController
       redirect_to action: :show
     end
   end
-
 
   private
 
